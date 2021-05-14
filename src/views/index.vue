@@ -41,7 +41,10 @@
         this.recipes = response.data
       })
       .catch(function(error) {
-        console.log(error)
+        if (error.response.status === 401) {
+          alert(error.response.data.message)
+          this.$router.push('/logout')
+        }
       })
     }
   }
