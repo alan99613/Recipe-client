@@ -42,3 +42,29 @@
   .recipeItem a:visited {
     color: blue;
   }
+
+  .submitForm h2 {
+    text-align: center;
+  }
+  
+  .submitForm button {
+    background-color: green;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .submitForm button:hover {
+    opacity: 0.7;
+  }
+  
+  .submitForm input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 10px;
+    border: 1px solid rgb(200, 200, 200);
+    box-sizing: border-box;
+  }

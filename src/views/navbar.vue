@@ -2,6 +2,7 @@
   <div class="navbar">
     <div class="barItem"><router-link to="/">Home</router-link></div>
     <div class="barItem barRightItem"><a href="" @click.prevent="loginout">{{ login? 'Logout':'Login' }}</a></div>
+    <div class="barItem barRightItem"><router-link v-if="!login" to="/register">Register</router-link></div>
     <div class="barItem barRightItem"><router-link v-if="login" to="/userinfo">User Info</router-link></div>
     <div class="barItem barRightItem"><router-link v-if="login" to="/favourite">Favourite</router-link></div>
   </div>
