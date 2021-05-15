@@ -4,6 +4,7 @@ import navbar from '../views/navbar.vue'
 import register from '../views/register.vue'
 import login from '../views/login.vue'
 import userinfo from '../views/userinfo.vue'
+import favourite from '../views/favourite.vue'
 
 const routes = [
   {
@@ -35,6 +36,13 @@ const routes = [
     path: "/userinfo",
     components: {
       default: userinfo,
+      nav: navbar
+    }
+  },
+  {
+    path: "/favourite",
+    components: {
+      default: favourite,
       nav: navbar
     }
   }
