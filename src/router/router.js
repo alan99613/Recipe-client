@@ -3,6 +3,7 @@ import index from '../views/index.vue'
 import navbar from '../views/navbar.vue'
 import register from '../views/register.vue'
 import login from '../views/login.vue'
+import userinfo from '../views/userinfo.vue'
 
 const routes = [
   {
@@ -29,6 +30,13 @@ const routes = [
   {
     path: "/logout",
     component: () => import('../views/logout.vue')
+  },
+  {
+    path: "/userinfo",
+    components: {
+      default: userinfo,
+      nav: navbar
+    }
   }
 ]
 
