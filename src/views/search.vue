@@ -1,8 +1,5 @@
 <template>
-  <div id="searchRecipe">
-    <input v-model="searchName" placeholder="Search recipe" />
-    <button @click="search">Search</button>
-  </div>
+  <h2 style="text-align: center;">Search: {{this.$route.params.name}}</h2>
   <div v-for="recipe in recipes">
     <Recipe :recipe="recipe" :isFavourite="false" />
   </div>
@@ -17,14 +14,7 @@
   export default {
     data() {
       return {
-        recipes: '',
-        favourites: '',
-        searchName: ''
-      }
-    }, methods: {
-      search() {
-        if (!this.searchName == '')
-          window.location.href = './search/'+this.searchName
+        recipes: ''
       }
     }, created() {
       let config;
@@ -37,8 +27,8 @@
         }
       }
 
-      // Get 5 recipes from API
-      axios.get('https://alan-recipe-api.herokuapp.com/api/v1/recipe?num=5', config)
+      // Search recipes from API
+      axios.get('https://alan-recipe-api.herokuapp.com/api/v1/recipe/name/'+this.$route.params.name, config)
       .then(response => {
         this.recipes = response.data
       })

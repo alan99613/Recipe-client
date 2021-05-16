@@ -5,6 +5,7 @@ import register from '../views/register.vue'
 import login from '../views/login.vue'
 import userinfo from '../views/userinfo.vue'
 import favourite from '../views/favourite.vue'
+import search from '../views/search.vue'
 
 const routes = [
   {
@@ -43,6 +44,13 @@ const routes = [
     path: "/favourite",
     components: {
       default: favourite,
+      nav: navbar
+    }
+  },
+  {
+    path: "/search/:name",
+    components: {
+      default: search,
       nav: navbar
     }
   }
