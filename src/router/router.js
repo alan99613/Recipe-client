@@ -6,6 +6,7 @@ import login from '../views/login.vue'
 import userinfo from '../views/userinfo.vue'
 import favourite from '../views/favourite.vue'
 import search from '../views/search.vue'
+import detail from '../views/detail.vue'
 
 const routes = [
   {
@@ -51,6 +52,13 @@ const routes = [
     path: "/search/:name",
     components: {
       default: search,
+      nav: navbar
+    }
+  },
+  {
+    path: "/detail/:id",
+    components: {
+      default: detail,
       nav: navbar
     }
   }

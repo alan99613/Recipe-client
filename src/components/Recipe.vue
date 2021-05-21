@@ -2,7 +2,7 @@
   <table class="recipeItem">
     <tr>
       <td style="width:400px">
-        <a :href="'/detail/'+recipe._id">
+        <a :href="'/Recipe-client/detail/'+recipe._id">
           <h1>{{ recipe.recipeName }}</h1>
           <img width="400" v-if="recipe.image" :src="recipe.image">
         </a>
