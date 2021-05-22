@@ -1,8 +1,5 @@
 <template>
-  <div id="searchRecipe">
-    <input v-model="searchName" placeholder="Search recipe" />
-    <button @click="search">Search</button>
-  </div>
+  <Search />
   <div v-for="recipe in recipes">
     <Recipe :recipe="recipe" :isFavourite="false" />
   </div>
@@ -10,6 +7,7 @@
 
 <script setup>
   import Recipe from '../components/Recipe.vue'
+  import Search from '../components/Search.vue'
 </script>
 
 <script>
@@ -18,13 +16,7 @@
     data() {
       return {
         recipes: '',
-        favourites: '',
-        searchName: ''
-      }
-    }, methods: {
-      search() {
-        if (!this.searchName == '')
-          window.location.href = './search/'+this.searchName
+        favourites: ''
       }
     }, created() {
       let config;

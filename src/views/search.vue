@@ -1,5 +1,5 @@
 <template>
-  <h2 style="text-align: center;">Search: {{this.$route.params.name}}</h2>
+  <h2 style="text-align: center;">Search: {{ name }}</h2>
   <div v-for="recipe in recipes">
     <Recipe :recipe="recipe" :isFavourite="false" />
   </div>
@@ -14,7 +14,8 @@
   export default {
     data() {
       return {
-        recipes: ''
+        recipes: '',
+        name: this.$route.params.name
       }
     }, created() {
       let config;
@@ -28,7 +29,7 @@
       }
 
       // Search recipes from API
-      axios.get('https://alan-recipe-api.herokuapp.com/api/v1/recipe/name/'+this.$route.params.name, config)
+      axios.get('https://alan-recipe-api.herokuapp.com/api/v1/recipe/name/'+this.name, config)
       .then(response => {
         this.recipes = response.data
       })
